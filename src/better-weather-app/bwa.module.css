@@ -1,0 +1,19 @@
+.card {
+    width: min(95%, 600px);
+    margin: 30px auto;
+    padding: 15px;
+    border-radius: 5px;
+    background: #d1d2b6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    grid-gap: 0.5em;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 16px;
+    text-align: center;
+}
+
+.card h1 {
+    font-size: 20px;
+}
