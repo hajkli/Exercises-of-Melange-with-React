@@ -1,7 +1,7 @@
 # Exercises of Melange with React and Reason ML
 Getting to know Reason ML with Melange, topped with React
-Several small and simple examples of Reason ML + React + Melange inspired by book [` Melange for React Developers`](https://react-book.melange.re/).
-Using [`Melange for React Developers template`] (https://github.com/melange-re/melange-for-react-devs-template)
+Several small and simple examples of Reason ML + React + Melange inspired by book [`Melange for React Developers`](https://react-book.melange.re/).
+Using [`Melange for React Developers template`](https://github.com/melange-re/melange-for-react-devs-template)
 
 ## Quick Start
 
