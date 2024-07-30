@@ -23,31 +23,41 @@ let getGoogleMapsUrl = (latitude: float, longitude: float) => {
   url;
 };
 
+let getRowWithString(label:string, value: string){
+  if(value == ""){
+    React.null
+  } else{
+    <Row label={label ++ ": "} value={value} />
+  }
+};
+
+let getRowWithInt(label:string, value: int){
+  if(value <= 0){
+    React.null
+  } else{
+    <Row label={label ++ ": "} value={value |> string_of_int} />
+  }
+};
+
+let getRowWithfloat(label:string, value: float){
+  if(value == 0.){
+    React.null
+  } else{
+    <Row label={label ++ ": "} value={(value |> string_of_float) ++ {js| °C|js}} />
+  }
+};
+
+
 [@react.component]
 let make = (~selectedCapitalCity: t) => {
   <div className=css##cityOverviewGrid>
     <h2 className=css##headline> {React.string("Capital City Overview")} </h2>
     <div className=css##block>
-      {selectedCapitalCity.name == ""
-         ? React.null : <Row label="Name: " value={selectedCapitalCity.name} />}
-      {selectedCapitalCity.country == ""
-         ? React.null
-         : <Row label="Country: " value={selectedCapitalCity.country} />}
-      {selectedCapitalCity.country == ""
-         ? React.null
-         : <Row
-             label="Population: "
-             value={selectedCapitalCity.population |> string_of_int}
-           />}
-      {selectedCapitalCity.temperature == 0.
-         ? React.null
-         : <Row
-             label="Temperature: "
-             value={
-               string_of_float(selectedCapitalCity.temperature)
-               ++ {js| °C|js}
-             }
-           />}
+      {getRowWithString("Name", selectedCapitalCity.name)}
+      {getRowWithString("Country", selectedCapitalCity.country)}
+      {getRowWithInt("Population", selectedCapitalCity.population)}
+      {getRowWithfloat("Temperature", selectedCapitalCity.temperature)}
+
       {selectedCapitalCity.latitude == 0.0
        && selectedCapitalCity.longitude == 0.0
          ? React.null

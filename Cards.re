@@ -7,7 +7,7 @@ type component = {
 };
 
 let listOfComponents = [
-  {name: "Hell World", url: "/src/hello-world/index.html", highlight: false},
+  {name: "Hello World", url: "/src/hello-world/index.html", highlight: false},
   {name: "Counter", url: "/src/counter/index.html", highlight: false},
   {
     name: "Celsius Conventer",

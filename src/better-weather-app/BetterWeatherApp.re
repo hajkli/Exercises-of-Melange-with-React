@@ -43,10 +43,10 @@ let fetchTemperatureOfCity =
              | None => Js.log("ailed to decode population as float")
              | Some(weatherTemperature) =>
                switch (Js.Dict.get(weatherTemperature, "temperature")) {
-               | None => Js.log("aa")
+               | None => Js.log("Current temperature data not found in the object")
                | Some(temperatureObj) =>
                  switch (Js.Json.decodeNumber(temperatureObj)) {
-                 | None => Js.log("asfasf")
+                 | None => Js.log("Failed to decode temperature as a number")
                  | Some(weatherTemperature) =>
                    let newCityToShow: CityOverview.t = {
                      ...newCityToShow,
